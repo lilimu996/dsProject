@@ -8,6 +8,7 @@
 ".\objects\stm32f1xx_hal_rcc.o"
 ".\objects\stm32f1xx_hal_rcc_ex.o"
 ".\objects\stm32f1xx_hal_uart.o"
+".\objects\sys.o"
 ".\objects\main.o"
 ".\objects\stm32f1xx_it.o"
 ".\objects\system_stm32f1xx.o"

@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>..\App;..\Core;..\Device;..\HAL;..\MiddleWare;..\ModuleDrivers;..\Platform;..\Project;..\Protocol;..\HAL\STM32F1xx_HAL_Driver\Src;..\HAL\STM32F1xx_HAL_Driver\Inc;..\HAL\CMSIS\Device\ST\STM32F1xx\Include;..\HAL\CMSIS\Include</IncludePath>
+              <IncludePath>..\App;..\Core;..\Device;..\HAL;..\MiddleWare;..\ModuleDrivers;..\Platform;..\Project;..\Protocol;..\HAL\STM32F1xx_HAL_Driver\Src;..\HAL\STM32F1xx_HAL_Driver\Inc;..\HAL\CMSIS\Device\ST\STM32F1xx\Include;..\HAL\CMSIS\Include;..\HAL\SYSTEM\sys</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -477,6 +477,16 @@
               <FileName>stm32f1xx_hal_uart.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h</FilePath>
+            </File>
+            <File>
+              <FileName>sys.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HAL\SYSTEM\sys\sys.c</FilePath>
+            </File>
+            <File>
+              <FileName>sys.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\HAL\SYSTEM\sys\sys.h</FilePath>
             </File>
           </Files>
         </Group>

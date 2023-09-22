@@ -42,6 +42,9 @@
 /*            Cortex-M3 Processor Exceptions Handlers                         */
 /******************************************************************************/
 
+
+extern void KeyShakeProcess_Callback(void);
+
 /**
   * @brief   This function handles NMI exception.
   * @param  None
@@ -138,6 +141,7 @@ void PendSV_Handler(void)
 void SysTick_Handler(void)
 {
   HAL_IncTick();
+  KeyShakeProcess_Callback();
 }
 
 /******************************************************************************/

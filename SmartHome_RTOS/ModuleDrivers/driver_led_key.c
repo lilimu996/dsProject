@@ -1,5 +1,6 @@
 #include "driver_led_key.h"
 #include "driver_buffer.h"
+#include "stdio.h"
 
 volatile static uint32_t KeyTrigerTime = 0;
 static RingBuffer KeyBuffer;
@@ -36,8 +37,8 @@ int Driver_KEY_Init(void)
     
     GPIO_InitStruct.Mode             = GPIO_MODE_IT_RISING_FALLING;
     GPIO_InitStruct.Pin              = KEY0_PIN;
-    GPIO_InitStruct.Pull             = GPIO_NOPULL;
-
+    GPIO_InitStruct.Pull             = GPIO_PULLUP;
+    GPIO_InitStruct.Speed            = GPIO_SPEED_FREQ_HIGH;
     HAL_GPIO_Init(KEY0_PORT,&GPIO_InitStruct);
     
     HAL_NVIC_SetPriority(EXTI4_IRQn, 0, 0);
@@ -59,6 +60,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     if(GPIO_Pin == KEY0_PIN)
     {
         KeyTrigerTime=HAL_GetTick()+50;
+        //LED0_TOGGLE();
     }
 }
 
@@ -73,19 +75,23 @@ void KeyShakeProcess_Callback(void)
         if( KEY0_STATUS() == 0)
         {
            press_time = tick;
+          // printf("press_time:%d\r\n",press_time);
         }
         else
         {
             release_time = tick;
+           //printf("release_time:%d\r\n",release_time);
         }
     }
     if(press_time != 0 && release_time != 0)
     {
         nKeyEvent.num = 1;
-        nKeyEvent.time = press_time - release_time;
+        nKeyEvent.time = release_time - press_time;
+        //printf("nKeyEvent.time:%d\r\n",release_time - press_time);
         press_time = 0;
         release_time = 0;
         Driver_Buffer_WriteBytes(&KeyBuffer,(uint8_t*)&nKeyEvent.num,sizeof(KeyEvent));
+        //printf("Key_time write success!! resault : %d!!  sizeof(): %d\r\n",resault,sizeof(KeyEvent));
     }
 
 }
@@ -94,16 +100,19 @@ int Driver_Key_Read(uint8_t *buf,uint16_t len)
 {
     if(len == 0 || len<sizeof(KeyEvent) || (len % sizeof(KeyEvent))!= 0)
     {
+       //printf("ERROR!! len is bad !!\r\n");
         return -1;
     }
     if(buf == NULL)
     {
+        //printf("ERROR!! buf is bad !!\r\n");
         return -1;
     }
     if(Driver_Buffer_ReadBytes(&KeyBuffer,buf,len) == len)
     {
         return 0;
     }
+    //printf("ERROR!! no message !!\r\n");
     return -1;
 }
 

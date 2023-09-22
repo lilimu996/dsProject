@@ -1,7 +1,7 @@
 #include "driver_buffer.h"
 #include "stdlib.h"
 #include "string.h"
-
+#include "stdio.h"
 
 /**
     函数名：Driver_Buffer_Init
@@ -13,18 +13,18 @@
 
 int Driver_Buffer_Init(ptRingBuffer buffer,uint16_t size)
 {
-	if(buffer==NULL||size==0)
-	{
-		return -1;
-	}
-	if(buffer->fifo==NULL)
-	{
-		buffer->fifo=(uint8_t*)malloc(size);
-	}
-	buffer->pw=buffer->pr=0;
-	buffer->buf_size=size;
-	
-	return 0;
+    if(buffer==NULL||size==0)
+    {
+        return -1;
+    }
+    if(buffer->fifo==NULL)
+    {
+        buffer->fifo=(uint8_t*)malloc(size);
+    }
+    buffer->pw=buffer->pr=0;
+    buffer->buf_size=size;
+
+    return 0;
 }
 /**
     函数名：Driver_Buffer_Write
@@ -35,18 +35,22 @@ int Driver_Buffer_Init(ptRingBuffer buffer,uint16_t size)
 */
 int Driver_Buffer_Write(ptRingBuffer buffer,const uint8_t data)
 {
-	if(buffer==NULL || buffer->fifo == NULL)
-	{
-		return -1;
-	}
-	int i=(buffer->pw+1)%buffer->buf_size;
-	if(i!=buffer->pw+1)
-	{
-		buffer->fifo[buffer->pw]=data;
-		buffer->pw=i;
-		return 0;
-	}
-	return -1;
+    //printf("buffer wirte-------------------------------->!!\r\n");
+    if(buffer==NULL || buffer->fifo == NULL)
+    {
+        //printf("ERROR!! buffer == NULL\r\n");
+        return -1;
+    }   
+    int i = (buffer->pw+1)%(buffer->buf_size);           
+    //printf("buffer->pw+1 == %d    buffer->buf_size ==  %d   i == %d \r\n",buffer->pw+1,buffer->buf_size,i);
+    if(i!=buffer->pr)                       //pw == pr 缓冲区已经满或者缓冲区为空  (pw+1)/size 则可以区分pw在表头和pw在表尾
+    {
+        buffer->fifo[buffer->pw]=data;
+        buffer->pw=i;
+        return 0;
+    }
+    //printf("buffer write error!!\r\n");
+    return -1;
 }
 
 /**
@@ -54,31 +58,31 @@ int Driver_Buffer_Write(ptRingBuffer buffer,const uint8_t data)
     功能：向指定的环形缓冲区写字节流
     输入参数：buffer->指向目标缓冲区；data_stream->表示要写入的字节流；len->要写入的字节流的长度
     输出参数：无
-    返回值：-1->表示错误；0->表示成功
+    返回值：-1->表示错误；len->表示成功
 */
 int Driver_Buffer_WriteBytes(ptRingBuffer buffer,const uint8_t *data_stream,uint8_t len)
 {	
-	if(buffer==NULL || buffer->fifo == NULL)
-	{
-		return -1;
-	}
-	if(data_stream == NULL)
-	{
-		return -1;
-	}
-	if(len == 0)
-	{
-		return -1;
-	}
-	int i=0;
-	for(i=0;i<len;i++)
-	{
-		if(Driver_Buffer_Write(buffer,data_stream[i])!=0)
-		{
-			break;
-		}
-	}
-	return i;
+    if(buffer==NULL || buffer->fifo == NULL)
+    {
+        return -1;
+    }
+    if(data_stream == NULL)
+    {
+        return -1;
+    }
+    if(len == 0)
+    {
+        return -1;
+    }
+    int i=0;
+    for(i=0;i<len;i++)
+    {
+        if(Driver_Buffer_Write(buffer,data_stream[i]) != 0)
+        {
+            break;
+        }
+    }
+    return i;
 }
 /**
     函数名：Driver_Buffer_Write

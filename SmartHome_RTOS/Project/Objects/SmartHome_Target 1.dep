@@ -593,7 +593,7 @@ I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_hcd.h)(0x646CE9FC)
 I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_mmc.h)(0x646CE9FC)
 F (..\HAL\SYSTEM\sys\sys.h)(0x650AF27B)()
 F (..\App\main.h)(0x650AD883)()
-F (..\App\main.c)(0x650D08A3)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\App -I ..\Core -I ..\Device -I ..\HAL -I ..\MiddleWare -I ..\ModuleDrivers -I ..\Platform -I ..\Project -I ..\Protocol -I ..\HAL\STM32F1xx_HAL_Driver\Src -I ..\HAL\STM32F1xx_HAL_Driver\Inc -I ..\HAL\CMSIS\Device\ST\STM32F1xx\Include -I ..\HAL\CMSIS\Include -I ..\HAL\SYSTEM\sys-IE:\origin\MDK5.36\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (..\App\main.c)(0x650D86C0)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\App -I ..\Core -I ..\Device -I ..\HAL -I ..\MiddleWare -I ..\ModuleDrivers -I ..\Platform -I ..\Project -I ..\Protocol -I ..\HAL\STM32F1xx_HAL_Driver\Src -I ..\HAL\STM32F1xx_HAL_Driver\Inc -I ..\HAL\CMSIS\Device\ST\STM32F1xx\Include -I ..\HAL\CMSIS\Include -I ..\HAL\SYSTEM\sys-IE:\origin\MDK5.36\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (..\App\main.h)(0x650AD883)
 I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x646CE9FC)
 I (..\Core\stm32f1xx_hal_conf.h)(0x646CE9FC)
@@ -654,6 +654,8 @@ I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_hcd.h)(0x646CE9FC)
 I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_mmc.h)(0x646CE9FC)
 I (..\HAL\SYSTEM\sys\sys.h)(0x650AF27B)
 I (..\ModuleDrivers\driver_led_key.h)(0x650D08A3)
+I (..\ModuleDrivers\driver_dbg.h)(0x650D4DEB)
+I (E:\origin\MDK5.36\ARM\ARMCC\include\stdio.h)(0x60252374)
 F (..\Core\stm32f1xx_hal_conf.h)(0x646CE9FC)()
 F (..\Core\stm32f1xx_it.c)(0x650D07DD)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\App -I ..\Core -I ..\Device -I ..\HAL -I ..\MiddleWare -I ..\ModuleDrivers -I ..\Platform -I ..\Project -I ..\Protocol -I ..\HAL\STM32F1xx_HAL_Driver\Src -I ..\HAL\STM32F1xx_HAL_Driver\Inc -I ..\HAL\CMSIS\Device\ST\STM32F1xx\Include -I ..\HAL\CMSIS\Include -I ..\HAL\SYSTEM\sys-IE:\origin\MDK5.36\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o .\objects\stm32f1xx_it.o --omf_browse .\objects\stm32f1xx_it.crf --depend .\objects\stm32f1xx_it.d)
 I (..\App\main.h)(0x650AD883)
@@ -774,7 +776,7 @@ I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pcd_ex.h)(0x646CE9FC)
 I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_hcd.h)(0x646CE9FC)
 I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_mmc.h)(0x646CE9FC)
 F (.\startup_stm32f103xe.s)(0x646CE9FC)(--cpu Cortex-M3 -g --apcs=interwork -IE:\origin\MDK5.36\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include--pd "__UVISION_VERSION SETA 536" --pd "STM32F10X_HD SETA 1"--list .\listings\startup_stm32f103xe.lst --xref -o .\objects\startup_stm32f103xe.o --depend .\objects\startup_stm32f103xe.d)
-F (..\ModuleDrivers\driver_buffer.c)(0x650BF334)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\App -I ..\Core -I ..\Device -I ..\HAL -I ..\MiddleWare -I ..\ModuleDrivers -I ..\Platform -I ..\Project -I ..\Protocol -I ..\HAL\STM32F1xx_HAL_Driver\Src -I ..\HAL\STM32F1xx_HAL_Driver\Inc -I ..\HAL\CMSIS\Device\ST\STM32F1xx\Include -I ..\HAL\CMSIS\Include -I ..\HAL\SYSTEM\sys-IE:\origin\MDK5.36\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o .\objects\driver_buffer.o --omf_browse .\objects\driver_buffer.crf --depend .\objects\driver_buffer.d)
+F (..\ModuleDrivers\driver_buffer.c)(0x650D8585)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\App -I ..\Core -I ..\Device -I ..\HAL -I ..\MiddleWare -I ..\ModuleDrivers -I ..\Platform -I ..\Project -I ..\Protocol -I ..\HAL\STM32F1xx_HAL_Driver\Src -I ..\HAL\STM32F1xx_HAL_Driver\Inc -I ..\HAL\CMSIS\Device\ST\STM32F1xx\Include -I ..\HAL\CMSIS\Include -I ..\HAL\SYSTEM\sys-IE:\origin\MDK5.36\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o .\objects\driver_buffer.o --omf_browse .\objects\driver_buffer.crf --depend .\objects\driver_buffer.d)
 I (..\ModuleDrivers\driver_buffer.h)(0x650BF37E)
 I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x646CE9FC)
 I (..\Core\stm32f1xx_hal_conf.h)(0x646CE9FC)
@@ -835,8 +837,9 @@ I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_hcd.h)(0x646CE9FC)
 I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_mmc.h)(0x646CE9FC)
 I (E:\origin\MDK5.36\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (E:\origin\MDK5.36\ARM\ARMCC\include\string.h)(0x6025237E)
+I (E:\origin\MDK5.36\ARM\ARMCC\include\stdio.h)(0x60252374)
 F (..\ModuleDrivers\driver_buffer.h)(0x650BF37E)()
-F (..\ModuleDrivers\driver_led_key.c)(0x650D07FB)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\App -I ..\Core -I ..\Device -I ..\HAL -I ..\MiddleWare -I ..\ModuleDrivers -I ..\Platform -I ..\Project -I ..\Protocol -I ..\HAL\STM32F1xx_HAL_Driver\Src -I ..\HAL\STM32F1xx_HAL_Driver\Inc -I ..\HAL\CMSIS\Device\ST\STM32F1xx\Include -I ..\HAL\CMSIS\Include -I ..\HAL\SYSTEM\sys-IE:\origin\MDK5.36\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o .\objects\driver_led_key.o --omf_browse .\objects\driver_led_key.crf --depend .\objects\driver_led_key.d)
+F (..\ModuleDrivers\driver_led_key.c)(0x650D85F5)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\App -I ..\Core -I ..\Device -I ..\HAL -I ..\MiddleWare -I ..\ModuleDrivers -I ..\Platform -I ..\Project -I ..\Protocol -I ..\HAL\STM32F1xx_HAL_Driver\Src -I ..\HAL\STM32F1xx_HAL_Driver\Inc -I ..\HAL\CMSIS\Device\ST\STM32F1xx\Include -I ..\HAL\CMSIS\Include -I ..\HAL\SYSTEM\sys-IE:\origin\MDK5.36\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o .\objects\driver_led_key.o --omf_browse .\objects\driver_led_key.crf --depend .\objects\driver_led_key.d)
 I (..\ModuleDrivers\driver_led_key.h)(0x650D08A3)
 I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x646CE9FC)
 I (..\Core\stm32f1xx_hal_conf.h)(0x646CE9FC)
@@ -896,4 +899,66 @@ I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pcd_ex.h)(0x646CE9FC)
 I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_hcd.h)(0x646CE9FC)
 I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_mmc.h)(0x646CE9FC)
 I (..\ModuleDrivers\driver_buffer.h)(0x650BF37E)
+I (E:\origin\MDK5.36\ARM\ARMCC\include\stdio.h)(0x60252374)
 F (..\ModuleDrivers\driver_led_key.h)(0x650D08A3)()
+F (..\ModuleDrivers\driver_dbg.c)(0x650D4DEB)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\App -I ..\Core -I ..\Device -I ..\HAL -I ..\MiddleWare -I ..\ModuleDrivers -I ..\Platform -I ..\Project -I ..\Protocol -I ..\HAL\STM32F1xx_HAL_Driver\Src -I ..\HAL\STM32F1xx_HAL_Driver\Inc -I ..\HAL\CMSIS\Device\ST\STM32F1xx\Include -I ..\HAL\CMSIS\Include -I ..\HAL\SYSTEM\sys-IE:\origin\MDK5.36\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o .\objects\driver_dbg.o --omf_browse .\objects\driver_dbg.crf --depend .\objects\driver_dbg.d)
+I (..\ModuleDrivers\driver_dbg.h)(0x650D4DEB)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h)(0x646CE9FC)
+I (..\Core\stm32f1xx_hal_conf.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h)(0x646CE9FC)
+I (..\Core\stm32f1xx.h)(0x646CE9FC)
+I (..\HAL\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xe.h)(0x646CE9FC)
+I (..\HAL\CMSIS\Include\core_cm3.h)(0x646CE9FC)
+I (E:\origin\MDK5.36\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (..\HAL\CMSIS\Include\cmsis_version.h)(0x646CE9FC)
+I (..\HAL\CMSIS\Include\cmsis_compiler.h)(0x646CE9FC)
+I (..\HAL\CMSIS\Include\cmsis_armcc.h)(0x646CE9FC)
+I (..\HAL\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h)(0x646CE9FC)
+I (E:\origin\MDK5.36\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_exti.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_eth.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cec.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_crc.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dac.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dac_ex.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_sram.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_fsmc.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_nor.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2s.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_iwdg.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rtc_ex.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pccard.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_sd.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_sdmmc.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_nand.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_spi.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_usart.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_irda.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_smartcard.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_wwdg.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pcd.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_usb.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pcd_ex.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_hcd.h)(0x646CE9FC)
+I (..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_mmc.h)(0x646CE9FC)
+I (E:\origin\MDK5.36\ARM\ARMCC\include\stdio.h)(0x60252374)
+F (..\ModuleDrivers\driver_dbg.h)(0x650D4DEB)()

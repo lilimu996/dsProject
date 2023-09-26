@@ -87,7 +87,7 @@ int Driver_Buffer_WriteBytes(ptRingBuffer buffer,const uint8_t *data_stream,uint
 /**
     函数名：Driver_Buffer_Write
     功能：向指定的环形缓冲区读取一个字节
-    输入参数：buffer->指向目标缓冲区；data->表示要读取的字节；
+    输入参数：buffer->指向目标缓冲区；data->保存要读取的字节；
     输出参数：无
     返回值：-1->表示错误；0->表示成功
 */

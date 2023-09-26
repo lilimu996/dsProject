@@ -488,6 +488,16 @@
               <FileType>5</FileType>
               <FilePath>..\HAL\SYSTEM\sys\sys.h</FilePath>
             </File>
+            <File>
+              <FileName>stm32f1xx_hal_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HAL\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f1xx_hal_usart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_usart.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -568,6 +578,16 @@
               <FileName>driver_dbg.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\ModuleDrivers\driver_dbg.h</FilePath>
+            </File>
+            <File>
+              <FileName>driver_net.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ModuleDrivers\driver_net.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_net.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\ModuleDrivers\driver_net.h</FilePath>
             </File>
           </Files>
         </Group>

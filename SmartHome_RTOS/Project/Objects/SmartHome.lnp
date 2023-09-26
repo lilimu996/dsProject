@@ -9,6 +9,7 @@
 ".\objects\stm32f1xx_hal_rcc_ex.o"
 ".\objects\stm32f1xx_hal_uart.o"
 ".\objects\sys.o"
+".\objects\stm32f1xx_hal_usart.o"
 ".\objects\main.o"
 ".\objects\stm32f1xx_it.o"
 ".\objects\system_stm32f1xx.o"
@@ -16,6 +17,7 @@
 ".\objects\driver_buffer.o"
 ".\objects\driver_led_key.o"
 ".\objects\driver_dbg.o"
+".\objects\driver_net.o"
 --strict --scatter ".\Objects\SmartHome.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

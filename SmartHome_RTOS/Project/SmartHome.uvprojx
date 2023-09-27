@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>..\App;..\Core;..\Device;..\HAL;..\MiddleWare;..\ModuleDrivers;..\Platform;..\Project;..\Protocol;..\HAL\STM32F1xx_HAL_Driver\Src;..\HAL\STM32F1xx_HAL_Driver\Inc;..\HAL\CMSIS\Device\ST\STM32F1xx\Include;..\HAL\CMSIS\Include;..\HAL\SYSTEM\sys</IncludePath>
+              <IncludePath>..\App;..\Core;..\Device;..\HAL;..\MiddleWare;..\ModuleDrivers;..\Platform;..\Project;..\Protocol;..\HAL\STM32F1xx_HAL_Driver\Src;..\HAL\STM32F1xx_HAL_Driver\Inc;..\HAL\CMSIS\Device\ST\STM32F1xx\Include;..\HAL\CMSIS\Include;..\HAL\SYSTEM\sys;..\MiddleWare\FreeRTOS-Kernel\portable\RVDS\ARM_CM3;..\MiddleWare\FreeRTOS-Kernel\portable\MemMang;..\MiddleWare\FreeRTOS-Kernel\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -498,6 +498,26 @@
               <FileType>5</FileType>
               <FilePath>..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_usart.h</FilePath>
             </File>
+            <File>
+              <FileName>stm32f1xx_hal_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HAL\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f1xx_hal_tim_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HAL\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f1xx_hal_tim.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f1xx_hal_tim_ex.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\HAL\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -544,7 +564,64 @@
           <GroupName>Device</GroupName>
         </Group>
         <Group>
-          <GroupName>MiddleWare</GroupName>
+          <GroupName>MiddleWare/FreeRTOS</GroupName>
+          <Files>
+            <File>
+              <FileName>FreeRTOSConfig.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\MiddleWare\FreeRTOSConfig.h</FilePath>
+            </File>
+            <File>
+              <FileName>croutine.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\FreeRTOS-Kernel\croutine.c</FilePath>
+            </File>
+            <File>
+              <FileName>event_groups.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\FreeRTOS-Kernel\event_groups.c</FilePath>
+            </File>
+            <File>
+              <FileName>list.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\FreeRTOS-Kernel\list.c</FilePath>
+            </File>
+            <File>
+              <FileName>queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\FreeRTOS-Kernel\queue.c</FilePath>
+            </File>
+            <File>
+              <FileName>stream_buffer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\FreeRTOS-Kernel\stream_buffer.c</FilePath>
+            </File>
+            <File>
+              <FileName>tasks.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\FreeRTOS-Kernel\tasks.c</FilePath>
+            </File>
+            <File>
+              <FileName>timers.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\FreeRTOS-Kernel\timers.c</FilePath>
+            </File>
+            <File>
+              <FileName>heap_4.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\FreeRTOS-Kernel\portable\MemMang\heap_4.c</FilePath>
+            </File>
+            <File>
+              <FileName>port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\FreeRTOS-Kernel\portable\RVDS\ARM_CM3\port.c</FilePath>
+            </File>
+            <File>
+              <FileName>portmacro.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\MiddleWare\FreeRTOS-Kernel\portable\RVDS\ARM_CM3\portmacro.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>ModuleDrivers</GroupName>
@@ -588,6 +665,11 @@
               <FileName>driver_net.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\ModuleDrivers\driver_net.h</FilePath>
+            </File>
+            <File>
+              <FileName>driver_hal_timebase.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ModuleDrivers\driver_hal_timebase.c</FilePath>
             </File>
           </Files>
         </Group>

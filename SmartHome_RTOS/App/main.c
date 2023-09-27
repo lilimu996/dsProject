@@ -5,6 +5,21 @@
 #include "stdio.h"
 #include "driver_net.h"
 #include "string.h"
+#include "FreeRTOS.h"
+#include "task.h"
+
+
+/* Task to be created. */
+void vTaskCode( void * pvParameters )
+{
+   uint32_t count = 0;
+
+    for( ;; )
+    {
+        printf("This is a test task -> %d\r\n", count ++);
+        vTaskDelay(500);
+    }
+}
 
 int main(void)
 {
@@ -19,6 +34,33 @@ int main(void)
     
     KeyEvent nKeyEvent={0};
     uint8_t count = 0;
+    
+    
+    
+    TaskHandle_t xHandle = NULL;
+    BaseType_t xReturned;
+    /* Create the task, storing the handle. */
+    xReturned=xTaskCreate(
+                vTaskCode,       /* Function that implements the task. */
+                "Test Task",     /* Text name for the task. */
+                128,             /* Stack size in words, not bytes. */
+                NULL,            /* Parameter passed into the task. */
+                1,               /* Priority at which the task is created. */
+                &xHandle );      /* Used to pass out the created task's handle. */
+
+    if( xReturned == pdPASS )
+    {
+        /* The task was created.   */
+        printf("the task was created!\r\n");
+    }
+    else
+    {
+        printf("the task creat error!\r\n");
+    }
+    vTaskStartScheduler();
+    
+    printf("HELLO WORLD!\r\n");
+    
     if(Driver_Net_ConnectWiFi("GSW24","li.120500" ,500) == 0)
     {
         printf("wifi connect success !!\r\n");

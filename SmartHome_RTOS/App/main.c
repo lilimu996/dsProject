@@ -1,103 +1,80 @@
 #include "main.h"
 #include "sys.h"
-#include "driver_led_key.h"
-#include "driver_dbg.h"
 #include "stdio.h"
-#include "driver_net.h"
+#include "dev_io.h"
+#include "dev_net.h"
 #include "string.h"
-#include "FreeRTOS.h"
-#include "task.h"
 
 
-/* Task to be created. */
-void vTaskCode( void * pvParameters )
-{
-   uint32_t count = 0;
+static ptIODev ledDev = NULL;
+static ptIODev keyDev = NULL;
+static ptIODev dbgoutDev = NULL;
+static ptNetDev netDev = NULL;
 
-    for( ;; )
-    {
-        printf("This is a test task -> %d\r\n", count ++);
-        vTaskDelay(500);
-    }
-}
+const static WiFiInfo wifi = {WiFi_ID, "GSW24", "li.120500"};
+const static TCP_UDP_Info tcp = {TCP_ID, "192.168.1.116",1000 , 8888};
+
 
 int main(void)
 {
-    uint8_t buf[5] = {0};
+    char buf[32] = {0};
+    KeyEvent key = {0};
+    uint8_t led_status = 0;
     
     HAL_Init();
     SystemClock_Config();
-    Driver_KEY_Init();
-    Driver_LED_Init();
-    Driver_DBG_Init();
-    Driver_Net_Init();
-    
-    KeyEvent nKeyEvent={0};
-    uint8_t count = 0;
-    
-    
-    
-    TaskHandle_t xHandle = NULL;
-    BaseType_t xReturned;
-    /* Create the task, storing the handle. */
-    xReturned=xTaskCreate(
-                vTaskCode,       /* Function that implements the task. */
-                "Test Task",     /* Text name for the task. */
-                128,             /* Stack size in words, not bytes. */
-                NULL,            /* Parameter passed into the task. */
-                1,               /* Priority at which the task is created. */
-                &xHandle );      /* Used to pass out the created task's handle. */
-
-    if( xReturned == pdPASS )
+  
+    dbgoutDev = IODev_GetDev(DBGOUT);
+    if(dbgoutDev != NULL)
     {
-        /* The task was created.   */
-        printf("the task was created!\r\n");
+        dbgoutDev->Init(dbgoutDev);
     }
-    else
+    ledDev = IODev_GetDev(LED);
+    if(ledDev !=NULL)
     {
-        printf("the task creat error!\r\n");
+        ledDev->Init(ledDev);
     }
-    vTaskStartScheduler();
     
-    printf("HELLO WORLD!\r\n");
+    keyDev = IODev_GetDev(KEY);
+    if(keyDev !=NULL)
+    {
+        keyDev->Init(keyDev);
+    }
     
-    if(Driver_Net_ConnectWiFi("GSW24","li.120500" ,500) == 0)
+    netDev = NetDev_GetDev(ESP8266);
+    if(netDev != NULL)
     {
-        printf("wifi connect success !!\r\n");
-    }
-    else
-    {
-        printf("wifi connect error !!\r\n");
-    }
-    /*等待建立WiFi连接*/
-    HAL_Delay(2000);
-    if(Driver_Net_ConnectTCP("192.168.1.116",8896,500) == 0)
-    {
-        printf("connct TCP success!!\r\n");
-    }
-    else
-    {
-        printf("connect TCP error!!\r\n");
+        if(netDev->Init(netDev) == 0)
+        {
+            if(netDev ->Connect(netDev, (char*)&wifi.id, 5000) == 0)
+            {
+                printf("Connect WiFi success! \r\n");
+                //建立TCP连接
+                if(netDev->Connect(netDev, (char *)&tcp.id, 500) != 0)
+                {
+                    printf("Connect TCP :%s failed.\r\n",tcp.IP);
+                    while(1);
+                }
+                else 
+                {
+                    printf("Connect TCP :%s success.\r\n",tcp.IP);
+                }
+            }
+            else
+            {
+                printf("Connect WiFi failed! \r\n");
+                return -1;
+            }
+        }
     }
     while(1)
     {
-        if(Driver_Net_TransmitSorcket("Hello World!\r\n",strlen("Hello World!\r\n"), 500) == 0)
+        if(keyDev->Read(keyDev, (uint8_t*)&key, sizeof(KeyEvent)) == 0)
         {
-            printf("Send OK!\r\n");
-        }
-        else
-        {
-             printf("Send Error!\r\n");
-        }
-        if(Driver_Net_RecvSocket((char*)buf,5,300) == 0)
-        {
-             printf("receive buf-->%s\r\n",buf);
-             memset(buf,0,5);
-        }
-        if(Driver_Key_Read((uint8_t*)&nKeyEvent.num,sizeof(nKeyEvent)) == 0)
-        {
-            printf("the key press:%d\r\n",count++);
-            LED0_TOGGLE();
+            led_status = !led_status;
+            ledDev->Write(ledDev, &led_status, 1);
+            sprintf (buf, "Key >%d< press >%d< ms\r\n",key.num, key.time);
+            netDev->Write(netDev, buf, strlen(buf), 50);
         }
     }
 }

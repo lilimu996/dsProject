@@ -16,6 +16,8 @@
 ".\objects\stm32f1xx_it.o"
 ".\objects\system_stm32f1xx.o"
 ".\objects\startup_stm32f103xe.o"
+".\objects\dev_io.o"
+".\objects\dev_net.o"
 ".\objects\croutine.o"
 ".\objects\event_groups.o"
 ".\objects\list.o"
@@ -30,6 +32,8 @@
 ".\objects\driver_dbg.o"
 ".\objects\driver_net.o"
 ".\objects\driver_hal_timebase.o"
+".\objects\platform_io.o"
+".\objects\platform_net.o"
 --strict --scatter ".\Objects\SmartHome.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

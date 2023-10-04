@@ -2,7 +2,7 @@
 #define __DRIVER_LED_KEY
 
 #include "stm32f1xx_hal.h"
-
+#include "dev_io.h"
 
 /**LED**/
 
@@ -23,10 +23,6 @@ int Driver_LED_WriteStatus(uint8_t status);
 #define KEY0_STATUS()              HAL_GPIO_ReadPin(KEY0_PORT,KEY0_PIN)
 #define KEY0_GPIO_CLK_ENABLE()   do{ __HAL_RCC_GPIOE_CLK_ENABLE(); }while(0)
 
-typedef struct{
-    uint16_t num;
-    uint16_t time;
-}KeyEvent;
 
 int Driver_KEY_Init(void);
 /*启动函数startup_stm32f103xe.s中会调用中断服务函数*/

@@ -60,7 +60,7 @@ int Driver_Net_DisconnectWiFi(void);
 *
 *    断开TCP,UDP连接
 */
-int Driver_Net_Disconnect_TCP_UPD(void);
+int Driver_Net_Disconnect_TCP_UDP(void);
 /**
 *
 *    发送数据包

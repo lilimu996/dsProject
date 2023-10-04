@@ -185,7 +185,7 @@ int Driver_Net_DisconnectWiFi(void)
 *
 *    ¶Ï¿ªTCP,UDPÁ¬½Ó
 */
-int Driver_Net_Disconnect_TCP_UPD(void)
+int Driver_Net_Disconnect_TCP_UDP(void)
 {
     return Driver_Net_TransmitCmd("AT+CIPCLOSE","OK",500);
 }

@@ -562,6 +562,28 @@
         </Group>
         <Group>
           <GroupName>Device</GroupName>
+          <Files>
+            <File>
+              <FileName>dev_io.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\dev_io.c</FilePath>
+            </File>
+            <File>
+              <FileName>dev_io.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Device\dev_io.h</FilePath>
+            </File>
+            <File>
+              <FileName>dev_net.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\dev_net.c</FilePath>
+            </File>
+            <File>
+              <FileName>dev_net.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Device\dev_net.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>MiddleWare/FreeRTOS</GroupName>
@@ -675,6 +697,33 @@
         </Group>
         <Group>
           <GroupName>Platform</GroupName>
+          <Files>
+            <File>
+              <FileName>platform_io.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Platform\platform_io.c</FilePath>
+            </File>
+            <File>
+              <FileName>platform_io.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Platform\platform_io.h</FilePath>
+            </File>
+            <File>
+              <FileName>platform.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Platform\platform.h</FilePath>
+            </File>
+            <File>
+              <FileName>platform_net.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Platform\platform_net.h</FilePath>
+            </File>
+            <File>
+              <FileName>platform_net.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Platform\platform_net.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>Project</GroupName>

@@ -1,8 +1,9 @@
 #ifndef __PLATFORM_NET_H
 #define __PLATFORM_NET_H
 
-#include "platform.h"
 #include "dev_net.h"
+#include "platform.h"
+
 
 int platform_net_init(struct NetDev *net);
 

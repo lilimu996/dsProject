@@ -1,16 +1,19 @@
 #ifndef __DEV_NET_H
 #define __DEV_NET_H
 
-#include "stm32f1xx_hal.h"
+/*
+*   unsigned short == uint16_t;
+*   unsigned char  == uint8_t
+*/
 
 typedef struct NetDev
 {
-    uint8_t Type;
+    unsigned char Type;
     int(*Init)(struct NetDev *net);
     int(*Connect)(struct NetDev *net, const char *arg, int timeout);
     int(*Disconnect)(struct NetDev *net, const char *arg, int timeout);
-    int(*Write)(struct NetDev *net, char *buf,uint16_t len, int timeout);
-    int(*Read)(struct NetDev *net, char *buf,uint16_t len, int timeout);
+    int(*Write)(struct NetDev *net, char *buf,unsigned short len, int timeout);
+    int(*Read)(struct NetDev *net, char *buf,unsigned short len, int timeout);
 }NetDev, *ptNetDev;
 
 typedef enum
@@ -37,8 +40,8 @@ typedef struct
 {
     ConnectID id;
     char *IP;
-    uint16_t LocalPort;
-    uint16_t RemotePort;
+    unsigned short LocalPort;
+    unsigned short RemotePort;
 }TCP_UDP_Info;
 ptNetDev NetDev_GetDev(NetDevType type);
 

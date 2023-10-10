@@ -9,7 +9,7 @@ TaskHandle_t ledTaskHandle;
 
 void LedTask(void *patameter)
 {
-    
+    uint32_t notify_value = 0;
     ptIODev ledDev = IODev_GetDev(LED);
     if(ledDev != NULL)
     {
@@ -22,7 +22,12 @@ void LedTask(void *patameter)
     
     while(1)
     {
-    
+        if(xTaskNotifyWait(0,0xFFFFFFFF, &notify_value, pdMS_TO_TICKS(10) == pdTRUE))
+        {
+            printf("LED Task notify value is %d \r\n",notify_value);
+            ledDev->Write(ledDev, (unsigned char*)&notify_value, 1);
+        }
+        
     }
 
 }

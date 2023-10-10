@@ -81,11 +81,18 @@ int Driver_Net_Init(void)
     {
         return -1;
     }
-    Driver_Buffer_Init(&CmdRetBuffer,128);
-    Driver_Buffer_Init(&NetDataBuffer,1024);
+    if( Driver_Buffer_Init(&CmdRetBuffer,128) != 0)
+    {
+        return -1;
+    }
+    if( Driver_Buffer_Init(&NetDataBuffer,1024) != 0)
+    {
+        return -1;
+    }
+    
     //Driver_Net_TransmitCmd("AT","OK",5000);
     HAL_Delay(20);
-    Driver_Net_TransmitCmd("AT+RST","OK",500);
+    Driver_Net_TransmitCmd("AT+RST","OK",10000);
     HAL_Delay(500);
     Driver_Net_TransmitCmd("AT+CWMODE=1","OK",500);
     return 0;

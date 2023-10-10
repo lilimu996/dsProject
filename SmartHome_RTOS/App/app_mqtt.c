@@ -14,6 +14,7 @@
 
 const static char LedTopic[] = "/k0aglMzMLKf/LED1/user/led";
 const static char KeyTopic[] = "/k0aglMzMLKf/LED1/user/keyInfo";
+extern TaskHandle_t ledTaskHandle;
 
 void messageArrived(MessageData* data)
 {
@@ -23,11 +24,11 @@ void messageArrived(MessageData* data)
     {
         if(strstr(data->message->payload, "led on") != 0)
         {
-        
+            xTaskNotify(ledTaskHandle,1,eSetValueWithOverwrite);
         }
         else if(strstr(data->message->payload, "led off") != 0)
         {
-        
+            xTaskNotify(ledTaskHandle,0,eSetValueWithOverwrite);
         }
             
     }
@@ -41,7 +42,7 @@ static void prvMQTTEchoTask(void *pvParameters)
     Network network;
     unsigned char sendbuf[256], readbuf[256];
     int rc = 0, 
-        count = 0;
+    count = 0;
     MQTTPacket_connectData connectData = MQTTPacket_connectData_initializer;
 
     pvParameters = 0;

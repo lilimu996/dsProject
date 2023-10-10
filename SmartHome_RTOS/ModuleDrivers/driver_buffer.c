@@ -20,6 +20,11 @@ int Driver_Buffer_Init(ptRingBuffer buffer,uint16_t size)
     if(buffer->fifo==NULL)
     {
         buffer->fifo=(uint8_t*)malloc(size);
+        if(buffer->fifo==NULL)
+        {
+            printf("Malloc %d bytes failed. \r\n",size);
+            return -1;
+        }
     }
     buffer->pw=buffer->pr=0;
     buffer->buf_size=size;

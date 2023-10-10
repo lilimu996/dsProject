@@ -23,7 +23,7 @@ void KeyTask(void *patameter)
     
     while(1)
     {
-    
+        vTaskDelay(1);
     }
 
 }

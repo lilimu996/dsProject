@@ -1,0 +1,8 @@
+---- LCD_Clear Matches (7 in 5 files) ----
+lcd.c (FreeRTOS\Demo\Common\drivers\ST\STM32F10xFWLib\src) line 587 : * Function Name  : LCD_Clear
+lcd.c (FreeRTOS\Demo\Common\drivers\ST\STM32F10xFWLib\src) line 593 : void LCD_Clear(void)
+lcd.c (FreeRTOS\Demo\CORTEX_STM32F103_Keil\STM32F10xFWLib\src) line 587 : * Function Name  : LCD_Clear
+lcd.h (FreeRTOS\Demo\Common\drivers\ST\STM32F10xFWLib\inc) line 149 : void LCD_Clear(void);
+lcd.h (FreeRTOS\Demo\CORTEX_STM32F103_Keil\STM32F10xFWLib\inc) line 149 : void LCD_Clear(void);
+prvConfigureLCD in main.c (FreeRTOS\Demo\CORTEX_STM32F103_Keil) : 	LCD_Clear();
+fputc in main.c (FreeRTOS\Demo\CORTEX_STM32F103_Keil) : 		LCD_Clear();
